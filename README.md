@@ -33,4 +33,4 @@
 ## The data is defined inside utils/data/data.ts and also the data type of the object
 
 Check a short video for the app journey 
-https://www.loom.com/share/4e27ef522f57484b8096b64bf02170f2?sid=ee91efaa-c98c-41b7-9668-b92b1287b391
+https://www.loom.com/share/81056208f918456894624610e1b48d2f?sid=0aa969b5-8b12-4e06-bf5f-482af3858d55
