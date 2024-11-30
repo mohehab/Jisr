@@ -1,6 +1,6 @@
 import Button from "./Button"
 
-const Modal = ({setState, file, handleAction}: {setState: Function, file:any, handleAction: Function}) => {
+const ContextMenu = ({setState, file, handleAction}: {setState: Function, file:any, handleAction: Function}) => {
 
     return (
         <div className="modal">
@@ -14,4 +14,4 @@ const Modal = ({setState, file, handleAction}: {setState: Function, file:any, ha
         </div>
     )
 }
-export default Modal
+export default ContextMenu

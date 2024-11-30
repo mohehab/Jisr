@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Modal from './ContextMenu';
+import ContextMenu from './ContextMenu';
 import { fileType } from "../utils/data/data";
 
 interface FolderProps {
@@ -38,6 +38,7 @@ const Folder: React.FC<FolderProps> = ({ files, NewFolder, setSelectedParent }) 
 
     const handleAction = (action: string) => {
       console.log('File name: ' + selected?.name, 'Action type: ' + action)
+      setShowModal(false)
     }
 
     return (
@@ -72,7 +73,7 @@ const Folder: React.FC<FolderProps> = ({ files, NewFolder, setSelectedParent }) 
           }
           {
             showModal && (
-                <Modal setState={(val:boolean) => setShowModal(val)} file={selected} handleAction={(action:string) => handleAction(action)} />
+                <ContextMenu setState={(val:boolean) => setShowModal(val)} file={selected} handleAction={(action:string) => handleAction(action)} />
             )
           }
         </>
