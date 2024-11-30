@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Getting Started with File Explorer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Main Components
 
-## Available Scripts
+1 - Folder Component
+- It helps to define the folder which contains another collections of data (files or other folder).
+- Has 3 Props:
+  A. files | required | which take the object tree of the files. (This object is defined staticly in /utils/data/data.ts)
+  B. NewFolder | required | In this prop, i pass the component (Folder) to itself, so if the Folder contain another folders, i can use the same component and functinality.
+  C. setSelectedParent | optional prop | used to update the direct selected folder parent with current selected folder so it can disable the unselected folders on the same level (siblings).
+- Methods:
+  A. Method for double click to open the folder but it doesn't apply on files.
+  B. Method for click to make the file in active and selective state.
+  C. Method for right click to open the popup to manpulite the data of the selected file / folder.
+  D. Method to handle the action which is passed to the popup.
 
-In the project directory, you can run:
+2 - ContextMenu Component
+- Used to open a popup when the user make a right click on the file, so the user can make some actions like copy, delete, rename. Currently these actions reflects in the console log.
+- Has 3 Props:
+   A. file | required | the selected file which the user want to manpluite its data.
+   B. setState | required | To toggle the state of the modal (show/hide)
+   C. handleAction | required | used to handle the events and actions taken inside the modal before the user close it.
 
-### `npm start`
+3 - Button Component 
+- Used to display a button with different styling and label
+- Has 3 Props:
+   A. label | required | The button text
+   B. background | required | define the background color (primary | danger | light)
+   C. action | required | used to define action taken by the user inside events like clicks and others..
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## The data is defined inside utils/data/data.ts and also the data type of the object
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Check a short video for the app journey 
+https://www.loom.com/share/4e27ef522f57484b8096b64bf02170f2?sid=ee91efaa-c98c-41b7-9668-b92b1287b391
